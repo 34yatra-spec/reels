@@ -1,0 +1,61 @@
+<template>
+<style>
+@font-face{font-family:'NotoDeva';font-style:normal;font-weight:800;src:url('assets/fonts/NotoSansDevanagari-800.woff2') format('woff2');unicode-range:U+0900-097F,U+1CD0-1CF4,U+1CF7-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF;}
+@font-face{font-family:'NotoDeva';font-style:normal;font-weight:800;src:url('assets/fonts/NotoSansDevanagari-800-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0100-02BA,U+2000-206F,U+20AC,U+2122;}
+#S19{position:absolute;inset:0;overflow:hidden;background:#F7F4EE;color:#14141A;font-family:'NotoDeva',sans-serif}
+#S19 *{box-sizing:border-box}
+#S19 .stage{position:absolute;inset:0}
+#S19 .bg{position:absolute;inset:0;background:#F7F4EE}
+#S19 .cam{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:540px 640px}
+#S19 .vz{position:absolute;left:240px;top:340px;width:600px;height:600px;overflow:visible}
+#S19 .textzone{position:absolute;left:60px;top:1090px;width:960px;height:330px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;align-content:center;gap:0 .08em;line-height:1.12;text-align:center;z-index:9}
+#S19 .word{display:inline-block;margin:0 .06em}
+#S19 .wi{display:inline-block;opacity:0}
+#S19 .accent{color:#2F3E9E;font-size:1.2em}
+#S19 .red{color:#E5484D;font-size:1.2em}
+#S19 .badge{position:absolute;left:110px;top:270px;width:120px;height:120px;opacity:0;z-index:8}
+#S19 .disc{position:absolute;left:60px;top:1455px;width:960px;text-align:center;font-size:30px;color:#8A8A94;opacity:0;z-index:9}
+#S19 .r2{position:absolute;inset:0;opacity:0;z-index:20;background:#F7F4EE}
+#S19 .r2t{position:absolute;left:0;right:0;top:1170px;text-align:center;font-size:120px;font-weight:800;color:#14141A}
+#S19 .r2bar{position:absolute;left:280px;top:620px;width:520px;height:40px;border-radius:20px;background:#E4DFD5}
+#S19 .r2fill{width:104px;height:100%;border-radius:20px;background:#2F3E9E}
+#S19 .flash{position:absolute;inset:0;background:#14141A;opacity:0;pointer-events:none;z-index:40}
+#S19 text{font-family:'NotoDeva',sans-serif;font-weight:800}
+</style>
+<div id="S19" data-composition-id="S19" data-width="1080" data-height="1920">
+  <div id="S19-stage" class="stage">
+    <div id="S19-bg" class="bg"></div>
+    <div id="S19-cam" class="cam"><svg class="vz" viewBox="0 0 600 600"><rect x="60" y="110" width="58" height="72" rx="6" fill="none" stroke="#8A8A94" stroke-width="3"/><rect x="130" y="110" width="58" height="72" rx="6" fill="none" stroke="#8A8A94" stroke-width="3"/><rect x="200" y="110" width="58" height="72" rx="6" fill="none" stroke="#8A8A94" stroke-width="3"/><rect x="270" y="110" width="58" height="72" rx="6" fill="none" stroke="#8A8A94" stroke-width="3"/><rect x="340" y="110" width="58" height="72" rx="6" fill="none" stroke="#8A8A94" stroke-width="3"/><rect x="410" y="110" width="58" height="72" rx="6" fill="none" stroke="#8A8A94" stroke-width="3"/><rect x="480" y="110" width="58" height="72" rx="6" fill="none" stroke="#8A8A94" stroke-width="3"/><rect x="60" y="200" width="58" height="72" rx="6" fill="none" stroke="#8A8A94" stroke-width="3"/><rect x="130" y="200" width="58" height="72" rx="6" fill="none" stroke="#8A8A94" stroke-width="3"/><rect x="200" y="200" width="58" height="72" rx="6" fill="none" stroke="#8A8A94" stroke-width="3"/><rect x="270" y="200" width="58" height="72" rx="6" fill="none" stroke="#8A8A94" stroke-width="3"/><rect x="340" y="200" width="58" height="72" rx="6" fill="none" stroke="#8A8A94" stroke-width="3"/><rect x="410" y="200" width="58" height="72" rx="6" fill="none" stroke="#8A8A94" stroke-width="3"/><rect x="480" y="200" width="58" height="72" rx="6" fill="none" stroke="#8A8A94" stroke-width="3"/><g id="S19-one" opacity="0"><rect x="66" y="118" width="46" height="56" rx="6" fill="#E0A63B"/></g><g id="S19-b0" opacity="0"><rect x="66" y="208" width="46" height="56" rx="6" fill="#E0A63B"/></g><g id="S19-b1" opacity="0"><rect x="136" y="208" width="46" height="56" rx="6" fill="#E0A63B"/></g><g id="S19-b2" opacity="0"><rect x="206" y="208" width="46" height="56" rx="6" fill="#E0A63B"/></g><g id="S19-b3" opacity="0"><rect x="276" y="208" width="46" height="56" rx="6" fill="#E0A63B"/></g><g id="S19-b4" opacity="0"><rect x="346" y="208" width="46" height="56" rx="6" fill="#E0A63B"/></g><g id="S19-b5" opacity="0"><rect x="416" y="208" width="46" height="56" rx="6" fill="#E0A63B"/></g><g id="S19-b6" opacity="0"><rect x="486" y="208" width="46" height="56" rx="6" fill="#E0A63B"/></g></svg></div>
+    <div id="S19-badge" class="badge"><g class="" transform="translate(60 60)"><circle r="34" fill="none" stroke="#2F3E9E" stroke-width="6"/><ellipse rx="59.5" ry="17.68" fill="none" stroke="#2F3E9E" stroke-width="6" transform="rotate(-18)"/></g></div>
+    <div id="S19-text" class="textzone" data-layout-allow-overflow style="font-size:120px"><span id="S19-w0" class="clip word" data-start="0.000" data-duration="2.760" data-track-index="4"><span class="wi">रोज़</span></span><span id="S19-w1" class="clip word" data-start="0.344" data-duration="2.416" data-track-index="4"><span class="wi">एक</span></span><span id="S19-w2" class="clip word" data-start="0.573" data-duration="2.187" data-track-index="4"><span class="wi">छोटा</span></span><span id="S19-w3" class="clip word" data-start="0.917" data-duration="1.843" data-track-index="4"><span class="wi">काम</span></span><span id="S19-w4" class="clip word" data-start="1.460" data-duration="1.300" data-track-index="4"><span class="wi">बिना</span></span><span id="S19-w5" class="clip word accent" data-start="1.737" data-duration="1.023" data-track-index="4"><span class="wi">नागा</span></span></div>
+    <div id="S19-disc" class="disc">ज्योतिष मान्यता पर आधारित</div>
+  </div>
+  
+  <div id="S19-flash" class="flash" data-layout-ignore></div>
+</div>
+<script>
+
+const TL=gsap.timeline({paused:true});
+let _s=133;function RND(){_s=(_s*1664525+1013904223)>>>0;return _s/4294967296;}
+const P='#S19-';
+function pop(sel,at,dur){TL.fromTo(P+sel,{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:dur||.12,ease:'back.out(1.6)'},at);}
+function slam(sel,at,from,dur){TL.fromTo(P+sel,{scale:from||1.35,opacity:0,transformOrigin:'50% 50%'},{scale:1,opacity:1,duration:dur||.14,ease:'power4.out'},at);}
+function shake(amp,dur,at){const n=Math.max(3,Math.round(dur*30));for(let i=1;i<=n;i++){const k=1-i/(n+1);TL.to(P+'cam',{x:(RND()*2-1)*amp*k,y:(RND()*2-1)*amp*k,duration:1/30,ease:'none'},at+(i-1)/30);}TL.to(P+'cam',{x:0,y:0,duration:1/30,ease:'none'},at+n/30);}
+function flash(at){TL.set(P+'flash',{backgroundColor:'#14141A'},at);TL.fromTo(P+'flash',{opacity:0},{opacity:.9,duration:.034,ease:'none'},at);TL.to(P+'flash',{opacity:0,duration:.067,ease:'none'},at+.034);}
+function draw(sel,at,d){const root=document.querySelector(P+sel);if(!root)return;const els=root.tagName==='path'?[root]:Array.from(root.querySelectorAll('path'));els.forEach(function(el){const L=el.getTotalLength();el.style.strokeDasharray=L;el.style.strokeDashoffset=L;TL.to(el,{strokeDashoffset:0,duration:d||.4,ease:'power2.out'},at);});}
+function spin(sel,at,d,turns){TL.to(P+sel,{rotation:360*(turns||1),duration:d||1.4,ease:'none',transformOrigin:'50% 50%'},at);}
+
+TL.fromTo(P+'w0 .wi',{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:.12,ease:'back.out(1.6)'},0.000);
+TL.fromTo(P+'w1 .wi',{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:.12,ease:'back.out(1.6)'},0.344);
+TL.fromTo(P+'w2 .wi',{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:.12,ease:'back.out(1.6)'},0.573);
+TL.fromTo(P+'w3 .wi',{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:.12,ease:'back.out(1.6)'},0.917);
+TL.fromTo(P+'w4 .wi',{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:.12,ease:'back.out(1.6)'},1.460);
+TL.fromTo(P+'w5 .wi',{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:.12,ease:'back.out(1.6)'},1.737);
+
+TL.to(P+'one',{opacity:1,duration:.05},0.58);
+TL.fromTo(P+'one',{y:-200},{y:0,duration:.18,ease:'power4.in'},0.58);
+for(let i=0;i<7;i++){TL.to(P+'b'+i,{opacity:1,duration:.05},1.46+i*.06);TL.fromTo(P+'b'+i,{y:-200},{y:0,duration:.16,ease:'power4.in'},1.46+i*.06);}
+window.__timelines["S19"]=TL;
+TL.seek(0);
+</script>
+</template>

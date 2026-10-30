@@ -1,0 +1,69 @@
+<template>
+<style>
+@font-face{font-family:'NotoDeva';font-style:normal;font-weight:800;src:url('assets/fonts/NotoSansDevanagari-800.woff2') format('woff2');unicode-range:U+0900-097F,U+1CD0-1CF4,U+1CF7-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF;}
+@font-face{font-family:'NotoDeva';font-style:normal;font-weight:800;src:url('assets/fonts/NotoSansDevanagari-800-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0100-02BA,U+2000-206F,U+20AC,U+2122;}
+#S22{position:absolute;inset:0;overflow:hidden;background:#F7F4EE;color:#14141A;font-family:'NotoDeva',sans-serif}
+#S22 *{box-sizing:border-box}
+#S22 .stage{position:absolute;inset:0}
+#S22 .bg{position:absolute;inset:0;background:#F7F4EE}
+#S22 .cam{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:540px 640px}
+#S22 .vz{position:absolute;left:240px;top:340px;width:600px;height:600px;overflow:visible}
+#S22 .textzone{position:absolute;left:60px;top:1090px;width:960px;height:330px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;align-content:center;gap:0 .08em;line-height:1.12;text-align:center;z-index:9}
+#S22 .word{display:inline-block;margin:0 .06em}
+#S22 .wi{display:inline-block;opacity:0}
+#S22 .accent{color:#2F3E9E;font-size:1.2em}
+#S22 .red{color:#E5484D;font-size:1.2em}
+#S22 .badge{position:absolute;left:110px;top:270px;width:120px;height:120px;opacity:0;z-index:8}
+#S22 .disc{position:absolute;left:60px;top:1455px;width:960px;text-align:center;font-size:30px;color:#8A8A94;opacity:0;z-index:9}
+#S22 .r2{position:absolute;inset:0;opacity:0;z-index:20;background:#F7F4EE}
+#S22 .r2t{position:absolute;left:0;right:0;top:1170px;text-align:center;font-size:120px;font-weight:800;color:#14141A}
+#S22 .r2bar{position:absolute;left:280px;top:620px;width:520px;height:40px;border-radius:20px;background:#E4DFD5}
+#S22 .r2fill{width:104px;height:100%;border-radius:20px;background:#2F3E9E}
+#S22 .flash{position:absolute;inset:0;background:#14141A;opacity:0;pointer-events:none;z-index:40}
+#S22 text{font-family:'NotoDeva',sans-serif;font-weight:800}
+</style>
+<div id="S22" data-composition-id="S22" data-width="1080" data-height="1920">
+  <div id="S22-stage" class="stage">
+    <div id="S22-bg" class="bg"></div>
+    <div id="S22-cam" class="cam"><svg class="vz" viewBox="0 0 600 600">
+<g id="S22-bldg" opacity="0.35"><rect x="180" y="200" width="240" height="340" fill="none" stroke="#8A8A94" stroke-width="3"/></g>
+<g id="S22-plane"><path d="M0 0 L64 22 L0 44 L12 22 Z" fill="#2F3E9E"/></g>
+<g id="S22-avatar" transform="translate(500 90)"><circle cx="0" cy="0" r="46" fill="none" stroke="#14141A" stroke-width="5"/>
+<circle cx="0" cy="-10" r="14" fill="#8A8A94"/><path d="M-26 34 Q0 6 26 34" fill="none" stroke="#8A8A94" stroke-width="5"/></g>
+<g id="S22-tick" transform="translate(500 90) scale(0.8)" opacity="0"><path d="M-22 2 L-6 18 L24 -16" fill="none" stroke="#2F3E9E" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg></div>
+    <div id="S22-badge" class="badge"><g class="" transform="translate(60 60)"><circle r="34" fill="none" stroke="#2F3E9E" stroke-width="6"/><ellipse rx="59.5" ry="17.68" fill="none" stroke="#2F3E9E" stroke-width="6" transform="rotate(-18)"/></g></div>
+    <div id="S22-text" class="textzone" data-layout-allow-overflow style="font-size:120px"><span id="S22-w0" class="clip word" data-start="0.000" data-duration="1.313" data-track-index="4"><span class="wi">ये</span></span><span id="S22-w1" class="clip word" data-start="0.164" data-duration="1.149" data-track-index="4"><span class="wi">उस</span></span><span id="S22-w2" class="clip word" data-start="0.383" data-duration="0.930" data-track-index="4"><span class="wi">दोस्त</span></span><span id="S22-w3" class="clip word" data-start="0.821" data-duration="0.492" data-track-index="4"><span class="wi">को</span></span><span id="S22-w4" class="clip word accent" data-start="0.985" data-duration="0.328" data-track-index="4"><span class="wi">भेजो</span></span></div>
+    <div id="S22-disc" class="disc">ज्योतिष मान्यता पर आधारित</div>
+  </div>
+  
+  <div id="S22-flash" class="flash" data-layout-ignore></div>
+</div>
+<script>
+
+const TL=gsap.timeline({paused:true});
+let _s=154;function RND(){_s=(_s*1664525+1013904223)>>>0;return _s/4294967296;}
+const P='#S22-';
+function pop(sel,at,dur){TL.fromTo(P+sel,{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:dur||.12,ease:'back.out(1.6)'},at);}
+function slam(sel,at,from,dur){TL.fromTo(P+sel,{scale:from||1.35,opacity:0,transformOrigin:'50% 50%'},{scale:1,opacity:1,duration:dur||.14,ease:'power4.out'},at);}
+function shake(amp,dur,at){const n=Math.max(3,Math.round(dur*30));for(let i=1;i<=n;i++){const k=1-i/(n+1);TL.to(P+'cam',{x:(RND()*2-1)*amp*k,y:(RND()*2-1)*amp*k,duration:1/30,ease:'none'},at+(i-1)/30);}TL.to(P+'cam',{x:0,y:0,duration:1/30,ease:'none'},at+n/30);}
+function flash(at){TL.set(P+'flash',{backgroundColor:'#14141A'},at);TL.fromTo(P+'flash',{opacity:0},{opacity:.9,duration:.034,ease:'none'},at);TL.to(P+'flash',{opacity:0,duration:.067,ease:'none'},at+.034);}
+function draw(sel,at,d){const root=document.querySelector(P+sel);if(!root)return;const els=root.tagName==='path'?[root]:Array.from(root.querySelectorAll('path'));els.forEach(function(el){const L=el.getTotalLength();el.style.strokeDasharray=L;el.style.strokeDashoffset=L;TL.to(el,{strokeDashoffset:0,duration:d||.4,ease:'power2.out'},at);});}
+function spin(sel,at,d,turns){TL.to(P+sel,{rotation:360*(turns||1),duration:d||1.4,ease:'none',transformOrigin:'50% 50%'},at);}
+
+TL.fromTo(P+'w0 .wi',{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:.12,ease:'back.out(1.6)'},0.000);
+TL.fromTo(P+'w1 .wi',{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:.12,ease:'back.out(1.6)'},0.164);
+TL.fromTo(P+'w2 .wi',{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:.12,ease:'back.out(1.6)'},0.383);
+TL.fromTo(P+'w3 .wi',{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:.12,ease:'back.out(1.6)'},0.821);
+TL.fromTo(P+'w4 .wi',{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:.12,ease:'back.out(1.6)'},0.985);
+
+TL.to(P+'bldg',{opacity:0,duration:.2},0);
+TL.set(P+'plane',{x:40,y:520,rotation:-10},0);
+TL.to(P+'plane',{x:470,y:120,rotation:18,duration:.55,ease:'power3.inOut'},0.1);
+TL.to(P+'plane',{opacity:0,duration:.08},0.66);
+TL.to(P+'tick',{opacity:1,duration:.06},0.7);
+TL.fromTo(P+'tick',{scale:1.2},{scale:.8,duration:.15},0.7);
+window.__timelines["S22"]=TL;
+TL.seek(0);
+</script>
+</template>

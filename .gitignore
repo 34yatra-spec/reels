@@ -1,0 +1,23 @@
+# Finished output (never upload)
+renders/
+*.mp4
+*.wav
+*.mov
+*.webm
+*.mkv
+*.m4a
+*.mp3
+
+# Assets/audio
+audio/
+assets/audio/
+*.hf-transaction-*
+
+# HyperFrames state
+.hyperframes/
+node_modules/
+__pycache__/
+*.log
+
+# Temp/scratch
+tmp/

@@ -1,0 +1,69 @@
+<template>
+<style>
+@font-face{font-family:'NotoDeva';font-style:normal;font-weight:800;src:url('assets/fonts/NotoSansDevanagari-800.woff2') format('woff2');unicode-range:U+0900-097F,U+1CD0-1CF4,U+1CF7-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF;}
+@font-face{font-family:'NotoDeva';font-style:normal;font-weight:800;src:url('assets/fonts/NotoSansDevanagari-800-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0100-02BA,U+2000-206F,U+20AC,U+2122;}
+#S07{position:absolute;inset:0;overflow:hidden;background:#F7F4EE;color:#14141A;font-family:'NotoDeva',sans-serif}
+#S07 *{box-sizing:border-box}
+#S07 .stage{position:absolute;inset:0}
+#S07 .bg{position:absolute;inset:0;background:#F7F4EE}
+#S07 .cam{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:540px 640px}
+#S07 .vz{position:absolute;left:240px;top:340px;width:600px;height:600px;overflow:visible}
+#S07 .textzone{position:absolute;left:60px;top:1090px;width:960px;height:330px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;align-content:center;gap:0 .08em;line-height:1.12;text-align:center;z-index:9}
+#S07 .word{display:inline-block;margin:0 .06em}
+#S07 .wi{display:inline-block;opacity:0}
+#S07 .accent{color:#2F3E9E;font-size:1.2em}
+#S07 .red{color:#E5484D;font-size:1.2em}
+#S07 .badge{position:absolute;left:110px;top:270px;width:120px;height:120px;opacity:0;z-index:8}
+#S07 .disc{position:absolute;left:60px;top:1455px;width:960px;text-align:center;font-size:30px;color:#8A8A94;opacity:0;z-index:9}
+#S07 .r2{position:absolute;inset:0;opacity:0;z-index:20;background:#F7F4EE}
+#S07 .r2t{position:absolute;left:0;right:0;top:1170px;text-align:center;font-size:120px;font-weight:800;color:#14141A}
+#S07 .r2bar{position:absolute;left:280px;top:620px;width:520px;height:40px;border-radius:20px;background:#E4DFD5}
+#S07 .r2fill{width:104px;height:100%;border-radius:20px;background:#2F3E9E}
+#S07 .flash{position:absolute;inset:0;background:#14141A;opacity:0;pointer-events:none;z-index:40}
+#S07 text{font-family:'NotoDeva',sans-serif;font-weight:800}
+</style>
+<div id="S07" data-composition-id="S07" data-width="1080" data-height="1920">
+  <div id="S07-stage" class="stage">
+    <div id="S07-bg" class="bg"></div>
+    <div id="S07-cam" class="cam"><svg class="vz" viewBox="0 0 600 600">
+<g id="S07-die"><rect x="210" y="210" width="180" height="180" rx="30" fill="none" stroke="#14141A" stroke-width="7"/>
+<circle cx="300" cy="300" r="22" fill="#14141A"/></g>
+<circle cx="260" cy="260" r="10" fill="#14141A" opacity="0"/><circle cx="340" cy="260" r="10" fill="#14141A" opacity="0"/><circle cx="260" cy="340" r="10" fill="#14141A" opacity="0"/><circle cx="340" cy="340" r="10" fill="#14141A" opacity="0"/>
+</svg></div>
+    
+    <div id="S07-text" class="textzone" data-layout-allow-overflow style="font-size:120px"><span id="S07-w0" class="clip word" data-start="0.000" data-duration="2.018" data-track-index="4"><span class="wi">लोग</span></span><span id="S07-w1" class="clip word" data-start="0.182" data-duration="1.836" data-track-index="4"><span class="wi">इसे</span></span><span id="S07-w2" class="clip word" data-start="0.364" data-duration="1.654" data-track-index="4"><span class="wi">बुरी</span></span><span id="S07-w3" class="clip word red" data-start="0.583" data-duration="1.435" data-track-index="4"><span class="wi">किस्मत</span></span><span id="S07-w4" class="clip word" data-start="0.947" data-duration="1.071" data-track-index="4"><span class="wi">कहते</span></span><span id="S07-w5" class="clip word" data-start="1.202" data-duration="0.816" data-track-index="4"><span class="wi">हैं</span></span></div>
+    
+  </div>
+  
+  <div id="S07-flash" class="flash" data-layout-ignore></div>
+</div>
+<script>
+
+const TL=gsap.timeline({paused:true});
+let _s=49;function RND(){_s=(_s*1664525+1013904223)>>>0;return _s/4294967296;}
+const P='#S07-';
+function pop(sel,at,dur){TL.fromTo(P+sel,{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:dur||.12,ease:'back.out(1.6)'},at);}
+function slam(sel,at,from,dur){TL.fromTo(P+sel,{scale:from||1.35,opacity:0,transformOrigin:'50% 50%'},{scale:1,opacity:1,duration:dur||.14,ease:'power4.out'},at);}
+function shake(amp,dur,at){const n=Math.max(3,Math.round(dur*30));for(let i=1;i<=n;i++){const k=1-i/(n+1);TL.to(P+'cam',{x:(RND()*2-1)*amp*k,y:(RND()*2-1)*amp*k,duration:1/30,ease:'none'},at+(i-1)/30);}TL.to(P+'cam',{x:0,y:0,duration:1/30,ease:'none'},at+n/30);}
+function flash(at){TL.set(P+'flash',{backgroundColor:'#14141A'},at);TL.fromTo(P+'flash',{opacity:0},{opacity:.9,duration:.034,ease:'none'},at);TL.to(P+'flash',{opacity:0,duration:.067,ease:'none'},at+.034);}
+function draw(sel,at,d){const root=document.querySelector(P+sel);if(!root)return;const els=root.tagName==='path'?[root]:Array.from(root.querySelectorAll('path'));els.forEach(function(el){const L=el.getTotalLength();el.style.strokeDasharray=L;el.style.strokeDashoffset=L;TL.to(el,{strokeDashoffset:0,duration:d||.4,ease:'power2.out'},at);});}
+function spin(sel,at,d,turns){TL.to(P+sel,{rotation:360*(turns||1),duration:d||1.4,ease:'none',transformOrigin:'50% 50%'},at);}
+
+TL.fromTo(P+'w0 .wi',{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:.12,ease:'back.out(1.6)'},0.000);
+TL.fromTo(P+'w1 .wi',{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:.12,ease:'back.out(1.6)'},0.182);
+TL.fromTo(P+'w2 .wi',{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:.12,ease:'back.out(1.6)'},0.364);
+TL.fromTo(P+'w3 .wi',{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:.12,ease:'back.out(1.6)'},0.583);
+TL.fromTo(P+'w4 .wi',{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:.12,ease:'back.out(1.6)'},0.947);
+TL.fromTo(P+'w5 .wi',{scale:.85,y:24,opacity:0,transformOrigin:'50% 50%'},{scale:1,y:0,opacity:1,duration:.12,ease:'back.out(1.6)'},1.202);
+
+TL.set(P+'die',{y:-420},0);
+TL.to(P+'die',{y:0,duration:.2,ease:'power2.in'},0);
+TL.to(P+'die',{y:-60,duration:.12,ease:'power1.out'},0.2);
+TL.to(P+'die',{y:0,duration:.12,ease:'power1.in'},0.32);
+TL.to(P+'die',{y:-24,duration:.08,ease:'power1.out'},0.44);
+TL.to(P+'die',{y:0,duration:.08,ease:'power1.in'},0.52);
+TL.to(P+'die',{scale:1.12,duration:.08},0.6);TL.to(P+'die',{scale:1,duration:.1},0.68);
+window.__timelines["S07"]=TL;
+TL.seek(0);
+</script>
+</template>
